@@ -348,3 +348,42 @@ footer {
   }
 }
 
+
+/* SWRP logo and branding */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand span {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand strong {
+  color: #ffffff;
+}
+
+.brand small {
+  display: block;
+  color: #a9b9d0;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+}
