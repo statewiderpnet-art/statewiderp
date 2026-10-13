@@ -1,61 +1,154 @@
-<!doctype html>
-<html lang="en-GB">
+```html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Meet the people responsible for the SWRP community.">
-  <title>Our Team | SWRP — Statewide Roleplay</title>
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Statewide Roleplay</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .team-hero {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .team-hero p {
+            max-width: 650px;
+            margin: 12px auto;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            padding-bottom: 55px;
+        }
+
+        .team-card {
+            padding: 25px;
+            border: 1px solid rgba(128,128,128,0.25);
+            border-radius: 14px;
+            background: rgba(128,128,128,0.06);
+        }
+
+        .team-card h2 {
+            font-size: 1.2rem;
+            margin: 12px 0 8px;
+        }
+
+        .team-card p {
+            line-height: 1.6;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .team-badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(128,128,128,0.35);
+            font-size: 0.8rem;
+        }
+
+        .team-note {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 35px;
+            border-radius: 12px;
+            background: rgba(128,128,128,0.06);
+        }
+    </style>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="SWRP home">
-      <img src="assets/swrp-logo.png" alt="SWRP logo" onerror="this.style.display='none'">
-      <span class="brand-copy"><span class="brand-name">SWRP</span><span class="brand-subtitle">STATEWIDE ROLEPLAY</span></span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation">Menu ☰</button>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html" data-page="index.html">Home</a>
-      <a href="departments.html" data-page="departments.html">Departments</a>
-      <a href="team.html" data-page="team.html">Our Team</a>
-      <a href="rules.html" data-page="rules.html">Rules</a>
-      <a href="applications.html" data-page="applications.html">Applications</a>
-      <a href="news.html" data-page="news.html">News</a>
-      <a href="store.html" data-page="store.html">Store</a>
-      <a class="nav-cta" href="join.html" data-page="join.html">Join SWRP ↗</a>
-    </nav>
-  </div>
+    <div class="container header-inner">
+        <a class="brand" href="index.html">STATEWIDE ROLEPLAY</a>
+        <button class="menu-toggle" type="button"
+                aria-expanded="false" aria-label="Open navigation">
+            Menu ☰
+        </button>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="departments.html">Departments</a>
+            <a href="team.html">Our Team</a>
+            <a href="rules.html">Rules</a>
+            <a href="applications.html">Applications</a>
+            <a href="news.html">News</a>
+            <a href="store.html">Store</a>
+            <a href="join.html">Join Us</a>
+        </nav>
+    </div>
 </header>
 
+<main class="container">
+    <section class="team-hero">
+        <h1>Meet Our Team</h1>
+        <p>
+            Our staff team helps keep Statewide Roleplay fair,
+            professional and enjoyable for everyone. We work together
+            to support our community and maintain a high standard of roleplay.
+        </p>
+    </section>
 
-<main>
-<section class="page-hero"><div class="container"><span class="eyebrow">The people behind the community</span><h1>Our team</h1><p>Our staff help guide the community, support members and maintain a consistent roleplay environment. Add your confirmed staff names and roles here.</p></div></section>
-<section class="section"><div class="container">
-<div class="notice">Staff listings are placeholders. Replace them with approved names, roles and profile images before promoting this page publicly.</div>
-<div class="grid grid-3" style="margin-top:22px">
-<article class="card"><div class="card-icon">◆</div><span class="pill">Leadership</span><h3 style="margin-top:16px">Community Director</h3><p><strong>Staff name to be added</strong><br>Oversees the direction and long-term development of SWRP.</p></article>
-<article class="card"><div class="card-icon">◇</div><span class="pill">Management</span><h3 style="margin-top:16px">Management Team</h3><p><strong>Staff names to be added</strong><br>Coordinates departments, staff operations and community standards.</p></article>
-<article class="card"><div class="card-icon">○</div><span class="pill">Moderation</span><h3 style="margin-top:16px">Community Staff</h3><p><strong>Staff names to be added</strong><br>Helps members, reviews reports and supports day-to-day activity.</p></article>
-</div>
-</div></section>
+    <section class="team-grid">
+        <article class="team-card">
+            <span class="team-badge">Leadership</span>
+            <h2>Ownership Team</h2>
+            <p>
+                Responsible for the overall direction, development and
+                management of Statewide Roleplay.
+            </p>
+        </article>
+
+        <article class="team-card">
+            <span class="team-badge">Management</span>
+            <h2>Senior Management</h2>
+            <p>
+                Oversees staff operations, handles escalated matters and
+                supports the running of the community.
+            </p>
+        </article>
+
+        <article class="team-card">
+            <span class="team-badge">Administration</span>
+            <h2>Staff Team</h2>
+            <p>
+                Helps enforce server rules, assists players and responds
+                to reports in a fair and professional manner.
+            </p>
+        </article>
+
+        <article class="team-card">
+            <span class="team-badge">Departments</span>
+            <h2>Department Leadership</h2>
+            <p>
+                Supports department members, manages training and helps
+                maintain standards within each department.
+            </p>
+        </article>
+    </section>
+
+    <section class="team-note">
+        <h2>Interested in joining our team?</h2>
+        <p>Keep an eye on our applications and community announcements.</p>
+        <a class="btn btn-primary" href="applications.html">
+            View Applications →
+        </a>
+    </section>
 </main>
 
-
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-copy">© <span data-year></span> Statewide Roleplay (SWRP). Community-run roleplay.</div>
-    <div class="footer-links">
-      <a href="rules.html">Community rules</a>
-      <a href="applications.html">Applications</a>
-      <a href="join.html">Join the community</a>
-      <a href="#" data-config-link="discord">Discord ↗</a>
+    <div class="container">
+        <p>© <span data-year></span> Statewide Roleplay. All rights reserved.</p>
+        <a href="https://discord.gg/euyWGqaeHQ"
+           target="_blank" rel="noopener noreferrer">Discord ↗</a>
     </div>
-  </div>
 </footer>
-<script src="assets/site.js"></script>
 
+<script src="assets/site.js"></script>
 </body>
 </html>
+```
