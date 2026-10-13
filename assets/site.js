@@ -3,10 +3,10 @@
  * Replace the example URLs below with your real community links.
  */
 const SWRP_CONFIG = {
-  discord: "https://discord.gg/REPLACE_WITH_YOUR_INVITE",
+  discord: "https://discord.gg/euyWGqaeHQ",
   fivem: "https://cfx.re/join/REPLACE_WITH_YOUR_CODE",
-  store: "https://REPLACE_WITH_YOUR_STORE",
-  applications: "https://discord.gg/REPLACE_WITH_YOUR_INVITE"
+  store: "https://discord.gg/euyWGqaeHQ",
+  applications: "https://discord.gg/euyWGqaeHQ"
 };
 
 document.querySelectorAll("[data-config-link]").forEach((link) => {
