@@ -1,4 +1,4 @@
-```javascript
+javascript
 // SWRP — Statewide Roleplay
 // Main website configuration
 
@@ -53,4 +53,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-```
