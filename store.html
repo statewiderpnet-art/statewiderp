@@ -1,61 +1,110 @@
-<!doctype html>
-<html lang="en-GB">
+```html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Explore official Statewide Roleplay community products and supporter options.">
-  <title>Store | SWRP — Statewide Roleplay</title>
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Unavailable | Statewide Roleplay</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .store-unavailable {
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .unavailable-content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .store-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .unavailable-content h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 15px;
+        }
+
+        .unavailable-content p {
+            line-height: 1.7;
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+
+        .status-label {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid rgba(255, 190, 80, 0.5);
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="SWRP home">
-      <img src="assets/swrp-logo.png" alt="SWRP logo" onerror="this.style.display='none'">
-      <span class="brand-copy"><span class="brand-name">SWRP</span><span class="brand-subtitle">STATEWIDE ROLEPLAY</span></span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation">Menu ☰</button>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html" data-page="index.html">Home</a>
-      <a href="departments.html" data-page="departments.html">Departments</a>
-      <a href="team.html" data-page="team.html">Our Team</a>
-      <a href="rules.html" data-page="rules.html">Rules</a>
-      <a href="applications.html" data-page="applications.html">Applications</a>
-      <a href="news.html" data-page="news.html">News</a>
-      <a href="store.html" data-page="store.html">Store</a>
-      <a class="nav-cta" href="join.html" data-page="join.html">Join SWRP ↗</a>
-    </nav>
-  </div>
+    <div class="container header-inner">
+        <a class="brand" href="index.html">STATEWIDE ROLEPLAY</a>
+
+        <button class="menu-toggle" type="button"
+                aria-expanded="false" aria-label="Open navigation">
+            Menu ☰
+        </button>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="departments.html">Departments</a>
+            <a href="team.html">Our Team</a>
+            <a href="rules.html">Rules</a>
+            <a href="applications.html">Applications</a>
+            <a href="news.html">News</a>
+            <a href="store.html">Store</a>
+            <a href="join.html">Join Us</a>
+        </nav>
+    </div>
 </header>
 
+<main class="store-unavailable">
+    <div class="unavailable-content">
+        <div class="store-icon">🛒</div>
 
-<main>
-<section class="page-hero"><div class="container"><span class="eyebrow">Support the community</span><h1>SWRP store</h1><p>Browse community-approved supporter options. This page is a presentation template and does not process payments.</p></div></section>
-<section class="section"><div class="container">
-<div class="grid grid-3">
-<article class="card"><div class="card-icon">◇</div><span class="pill">Supporter</span><h3 style="margin-top:16px">Community Supporter</h3><p>Example listing for a supporter package. Add the actual benefits and price only after they are confirmed.</p><a class="btn btn-secondary" href="#" data-config-link="store">View store ↗</a></article>
-<article class="card"><div class="card-icon">✦</div><span class="pill">Cosmetic</span><h3 style="margin-top:16px">Cosmetic Extras</h3><p>Example listing for optional cosmetic extras, if your server offers them.</p><a class="btn btn-secondary" href="#" data-config-link="store">View store ↗</a></article>
-<article class="card"><div class="card-icon">＋</div><span class="pill">Community</span><h3 style="margin-top:16px">Other Products</h3><p>Add your approved store products, terms and fulfilment information here.</p><a class="btn btn-primary" href="#" data-config-link="store">Visit official store ↗</a></article>
-</div>
-<div class="notice" style="margin-top:24px">No checkout is built into this website. Connect your trusted store provider before accepting payments, and clearly display your terms and refund policy.</div>
-</div></section>
+        <div class="status-label">
+            STORE CURRENTLY UNAVAILABLE
+        </div>
+
+        <h1>Our Store Is Temporarily Closed</h1>
+
+        <p>
+            We're currently working behind the scenes to get the
+            Statewide Roleplay store ready for launch.
+            Please check back soon for updates.
+        </p>
+
+        <a class="btn btn-primary" href="index.html">
+            Return to Homepage
+        </a>
+        <a class="btn btn-secondary" href="join.html">
+            Join Our Community
+        </a>
+    </div>
 </main>
 
-
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-copy">© <span data-year></span> Statewide Roleplay (SWRP). Community-run roleplay.</div>
-    <div class="footer-links">
-      <a href="rules.html">Community rules</a>
-      <a href="applications.html">Applications</a>
-      <a href="join.html">Join the community</a>
-      <a href="#" data-config-link="discord">Discord ↗</a>
+    <div class="container">
+        <p>© <span data-year></span> Statewide Roleplay. All rights reserved.</p>
+        <a href="https://discord.gg/euyWGqaeHQ"
+           target="_blank" rel="noopener noreferrer">Discord ↗</a>
     </div>
-  </div>
 </footer>
-<script src="assets/site.js"></script>
 
+<script src="assets/site.js"></script>
 </body>
 </html>
+```
