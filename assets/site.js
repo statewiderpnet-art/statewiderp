@@ -1,39 +1,63 @@
-
-
-const USRP_LINKS = {
+/*
+ * SWRP site settings
+ * Replace the example URLs below with your real community links.
+ */
+const SWRP_CONFIG = {
   discord: "https://discord.gg/REPLACE_WITH_YOUR_INVITE",
   fivem: "https://cfx.re/join/REPLACE_WITH_YOUR_CODE",
-  support: "https://discord.gg/REPLACE_WITH_YOUR_INVITE"
+  store: "https://REPLACE_WITH_YOUR_STORE",
+  applications: "https://discord.gg/REPLACE_WITH_YOUR_INVITE"
 };
 
 document.querySelectorAll("[data-config-link]").forEach((link) => {
   const key = link.dataset.configLink;
-  const destination = USRP_LINKS[key];
+  const destination = SWRP_CONFIG[key];
 
   if (destination && !destination.includes("REPLACE_WITH")) {
     link.href = destination;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   } else {
+    link.href = "#";
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      alert("Please add your real " + key + " link in assets/site.js.");
+      alert("SWRP setup needed: add your real " + key + " link in assets/site.js.");
     });
   }
 });
 
 const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav-links");
-
 if (toggle && nav) {
   toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", String(open));
+    const isOpen = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
   });
+  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  }));
 }
 
-const year = document.getElementById("year");
+document.querySelectorAll("[data-year]").forEach((node) => {
+  node.textContent = new Date().getFullYear();
+});
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+const currentPage = location.pathname.split("/").pop() || "index.html";
+document.querySelectorAll(".nav-links a[data-page]").forEach((link) => {
+  if (link.dataset.page === currentPage) {
+    link.classList.add("active");
+    link.setAttribute("aria-current", "page");
+  }
+});
+
+document.querySelectorAll("[data-demo-form]").forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const message = form.querySelector("[data-form-message]");
+    if (message) {
+      message.textContent = "This is a website demo form. Connect it to your Discord application system or a form service before accepting applications.";
+      message.hidden = false;
+    }
+  });
+});
