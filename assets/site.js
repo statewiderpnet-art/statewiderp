@@ -1,28 +1,48 @@
+// SWRP — Statewide Roleplay website configuration
 
 const SWRP_CONFIG = {
     discord: "https://discord.gg/euyWGqaeHQ",
-    storeCode: "https://discord.gg/euyWGqaeHQ",
-    staffApplications: "https://discord.gg/euyWGqaeHQ"
+    store: "https://discord.gg/euyWGqaeHQ",
+    applications: "https://discord.gg/euyWGqaeHQ",
+    fivem: "https://discord.gg/euyWGqaeHQ"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('a[href*="DISCORD_LINK"]').forEach(link => {
-        link.href = SWRP_CONFIG.discord;
+    // Connect every configured website link
+    document.querySelectorAll("[data-config-link]").forEach(link => {
+        const linkType = link.dataset.configLink;
+        const destination = SWRP_CONFIG[linkType];
+
+        if (destination) {
+            link.href = destination;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+        }
     });
 
-    document.querySelectorAll('[data-link="discord"], .discord-link').forEach(link => {
-        link.href = SWRP_CONFIG.discord;
+    // Set the current year in the footer
+    document.querySelectorAll("[data-year]").forEach(element => {
+        element.textContent = new Date().getFullYear();
     });
 
-    document.querySelectorAll('[data-link="store-code"], .store-code-link').forEach(link => {
-        link.href = SWRP_CONFIG.storeCode;
+    // Highlight the current page in the navigation
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll("[data-page]").forEach(link => {
+        if (link.dataset.page === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
     });
 
-    document.querySelectorAll('[data-link="staff-applications"], .staff-applications-link').forEach(link => {
-        link.href = SWRP_CONFIG.staffApplications;
-    });
+    // Mobile navigation menu
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav-links");
 
-    document.querySelectorAll('a[href*="YOUR_DISCORD"], a[href="#discord"]').forEach(link => {
-        link.href = SWRP_CONFIG.discord;
-    });
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("active");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+    }
 });
