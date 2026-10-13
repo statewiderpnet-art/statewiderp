@@ -1,63 +1,56 @@
-/*
- * SWRP site settings
- * Replace the example URLs below with your real community links.
- */
+```javascript
+// SWRP — Statewide Roleplay
+// Main website configuration
+
 const SWRP_CONFIG = {
-  discord: "https://discord.gg/euyWGqaeHQ",
-  fivem: "https://cfx.re/join/REPLACE_WITH_YOUR_CODE",
-  store: "https://discord.gg/euyWGqaeHQ",
-  applications: "https://discord.gg/euyWGqaeHQ"
+    discord: "https://discord.gg/euyWGqaeHQ",
+    storeCode: "https://discord.gg/euyWGqaeHQ",
+    staffApplications: "https://discord.gg/euyWGqaeHQ"
 };
 
-document.querySelectorAll("[data-config-link]").forEach((link) => {
-  const key = link.dataset.configLink;
-  const destination = SWRP_CONFIG[key];
-
-  if (destination && !destination.includes("REPLACE_WITH")) {
-    link.href = destination;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-  } else {
-    link.href = "#";
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      alert("SWRP setup needed: add your real " + key + " link in assets/site.js.");
+// Apply links automatically to matching elements
+document.addEventListener("DOMContentLoaded", () => {
+    // Discord links
+    document.querySelectorAll(
+        '[data-link="discord"], .discord-link'
+    ).forEach(link => {
+        link.href = SWRP_CONFIG.discord;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
     });
-  }
-});
 
-const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav-links");
-if (toggle && nav) {
-  toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
-  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-  }));
-}
+    // Store code links
+    document.querySelectorAll(
+        '[data-link="store-code"], .store-code-link'
+    ).forEach(link => {
+        link.href = SWRP_CONFIG.storeCode;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    });
 
-document.querySelectorAll("[data-year]").forEach((node) => {
-  node.textContent = new Date().getFullYear();
-});
+    // Staff application links
+    document.querySelectorAll(
+        '[data-link="staff-applications"], .staff-applications-link'
+    ).forEach(link => {
+        link.href = SWRP_CONFIG.staffApplications;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    });
 
-const currentPage = location.pathname.split("/").pop() || "index.html";
-document.querySelectorAll(".nav-links a[data-page]").forEach((link) => {
-  if (link.dataset.page === currentPage) {
-    link.classList.add("active");
-    link.setAttribute("aria-current", "page");
-  }
-});
+    // Mobile navigation
+    const menuButton = document.querySelector(
+        ".menu-toggle, .nav-toggle, #menu-toggle"
+    );
 
-document.querySelectorAll("[data-demo-form]").forEach((form) => {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const message = form.querySelector("[data-form-message]");
-    if (message) {
-      message.textContent = "This is a website demo form. Connect it to your Discord application system or a form service before accepting applications.";
-      message.hidden = false;
+    const navigation = document.querySelector(
+        ".nav-links, .navbar-links, #nav-links"
+    );
+
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("active");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
     }
-  });
 });
+```
